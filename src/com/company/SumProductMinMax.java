@@ -8,7 +8,7 @@ public class SumProductMinMax {
 
     public static void main(String[] args) {
 
-        int sum, product, min, max;
+        int sum, product, max, min;
         int num1, num2, num3;
 
         Scanner in = new Scanner(System.in);
@@ -30,22 +30,11 @@ public class SumProductMinMax {
         product = num1 * num2 * num3;
         System.out.println("The product is " + product);
 
-        min = num1;
-        if(num2 < min) {
-            min = num2;
-        }
-        if (num3 < min) {
-            min = num3;
-        }
+        //updated code using Mihai's suggestion
+        min = Math.min(num1, Math.min(num2, num3));
         System.out.println("The min is " + min);
 
-        max = num1;
-        if(num2 > max) {
-            max = num2;
-        }
-        if (num3 > max) {
-            max = num3;
-        }
+        max = Math.max(num1, Math.max(num2, num3));
         System.out.println("The max is " + max);
 
     }
